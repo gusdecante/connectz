@@ -1,6 +1,21 @@
 import { TableContainer, Table, TableHead, TableRow, TableCell, TableBody, TableFooter, TablePagination, Button } from '@mui/material'
 import styled from 'styled-components'
 
+export const ContainerFlex = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    div + div {
+        align-self: flex-end;
+        svg {
+            margin: 0 .4em;
+        }
+    }
+`
+
+export  const StyledImage = styled.img``
+
 export const ContainerButton = styled.div`
     align-self: flex-end;
     margin: 1em 0;
@@ -32,8 +47,7 @@ export const CustomTable = styled.table`
     border-radius: 2em;
     box-shadow: 2px 1px 8px 2px #ddd;
 `
-export const CustomTableHead = styled(TableHead)`
-`
+export const CustomTableHead = styled(TableHead)``
 export const CustomTableRow = styled(TableRow)`` 
 export const CustomTableCell = styled(TableCell)`
     img {

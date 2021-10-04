@@ -1,7 +1,20 @@
 import React, { useState, MouseEvent, ChangeEvent } from 'react';
-import Image from 'next/image'
 import { useTheme } from '@mui/material/styles';
-import { CustomSquareStyled, CustomTableContainer, CustomTable, CustomTableHead, CustomTableRow, CustomTableCell, CustomTableBody, CustomTableFooter, CustomTablePagination, CustomButton, ContainerButton } from './styles'
+import { 
+  CustomSquareStyled, 
+  CustomTableContainer, 
+  CustomTable, 
+  CustomTableHead, 
+  CustomTableRow, 
+  CustomTableCell, 
+  CustomTableBody, 
+  CustomTableFooter, 
+  CustomTablePagination, 
+  CustomButton, 
+  ContainerButton, 
+  StyledImage, 
+  ContainerFlex  
+} from './styles'
 import { IconButton } from '@mui/material';
 import Box from '@mui/material/Box';
 import { rows } from './utils/data'
@@ -12,6 +25,11 @@ import FirstPageIcon from '@mui/icons-material/FirstPage';
 import Typography from '@mui/material/Typography'
 import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import Filter from 'public/assets/icons/filter.svg'
+import List from 'public/assets/icons/list.svg'
+import Grid from 'public/assets/icons/grid.svg'
+
+
 
 interface TablePaginationActionsProps {
   count: number;
@@ -93,22 +111,31 @@ export default function MainTable() {
 
   return (
     <CustomSquareStyled>
-      <Typography
-      sx={{ mt: 0.5, ml: 2 }}
-      color="text.secondary"
-      display="block"
-      variant="h6"
-      >
-      Cesta de compras
-      </Typography> 
-      <Typography
-      sx={{ mt: 0.5, ml: 2 }}
-      color="text.primary"
-      display="block"
-      variant="h4"
-      >
-      Cesta de compras
-      </Typography> 
+      <ContainerFlex>
+        <div>
+          <Typography
+          sx={{ mt: 0.5, ml: 2 }}
+          color="text.secondary"
+          display="block"
+          variant="h6"
+          >
+          Cesta de compras
+          </Typography> 
+          <Typography
+          sx={{ mt: 0.5, ml: 2 }}
+          color="text.primary"
+          display="block"
+          variant="h4"
+          >
+          Cesta de compras
+          </Typography> 
+        </div>
+        <div>
+          <Filter />
+          <List />
+          <Grid />
+        </div>
+      </ContainerFlex>
       <CustomTableContainer>
         <CustomTable>
           <CustomTableHead>
@@ -136,7 +163,7 @@ export default function MainTable() {
                 </CustomTableCell>
                 <CustomTableCell component="th" scope="row">
                   <div>
-                    <Image src="/assets/img/product.jpg" alt="" />
+                    <StyledImage src="/assets/img/product.jpg" alt="" />
                     <span>{row.description}</span>
                   </div>
                 </CustomTableCell>
