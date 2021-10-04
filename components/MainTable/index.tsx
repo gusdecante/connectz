@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react';
+import React, { useState, MouseEvent, ChangeEvent } from 'react';
 import { useTheme } from '@mui/material/styles';
 import { CustomSquareStyled, CustomTableContainer, CustomTable, CustomTableHead, CustomTableRow, CustomTableCell, CustomTableBody, CustomTableFooter, CustomTablePagination, CustomButton, ContainerButton } from './styles'
 import { IconButton } from '@mui/material';
@@ -123,32 +123,34 @@ export default function MainTable() {
           </CustomTableHead>
           <CustomTableBody>
             {(rowsPerPage > 0 ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) : rows).map((row) => (
-              <CustomTableRow key={row.description}>
-                  <CustomTableCell>
-                  <IconButton
-                    aria-label="expand row"
-                    size="small"
-                    onClick={() => setOpen(!open)}
-                  >
-                    {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                  </IconButton>
-                </CustomTableCell>
-                <CustomTableCell component="th" scope="row">
-                  <div>
-                    <img src="/assets/img/product.jpg" alt="" />
-                    <span>{row.description}</span>
-                  </div>
-                </CustomTableCell>
-                <CustomTableCell component="th" scope="row">
-                  {row.identifier}
-                </CustomTableCell>
-                <CustomTableCell component="th" scope="row">
-                  {row.total}
-                </CustomTableCell>
-                <CustomTableCell component="th" scope="row">
-                  {row.quantity}
-                </CustomTableCell>
-              </CustomTableRow>
+              <span key={row.description}>
+                <CustomTableRow>
+                    <CustomTableCell>
+                    <IconButton
+                      aria-label="expand row"
+                      size="small"
+                      onClick={() => setOpen(!open)}
+                    >
+                      {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                    </IconButton>
+                  </CustomTableCell>
+                  <CustomTableCell component="th" scope="row">
+                    <div>
+                      <img src="/assets/img/product.jpg" alt="" />
+                      <span>{row.description}</span>
+                    </div>
+                  </CustomTableCell>
+                  <CustomTableCell component="th" scope="row">
+                    {row.identifier}
+                  </CustomTableCell>
+                  <CustomTableCell component="th" scope="row">
+                    {row.total}
+                  </CustomTableCell>
+                  <CustomTableCell component="th" scope="row">
+                    {row.quantity}
+                  </CustomTableCell>
+                </CustomTableRow>
+              </span>
             ))
             
             }

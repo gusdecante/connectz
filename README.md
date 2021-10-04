@@ -23,7 +23,7 @@ O ConnectZ é um ecommerce simples e robusto focado na experiência do usuário 
 
 ```bash
 # Clonar este repositório
-$ git clone https://github.com/marcoscelio/my-market-portal.git
+$ git clone git@github.com:gusdecante/connectz.git
 
 
 # Install dependencies
