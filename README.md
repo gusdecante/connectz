@@ -1,34 +1,43 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">
+  <br>
+  <img src="https://cdn.pixabay.com/photo/2021/05/13/10/26/10-26-56-190_960_720.png" alt="ConnectZ Logomarca" width="200">
+  <br>
+  ConnectZ
+  <br>
+  <h3>A expansão é buscar o ínicio das coisas!</h3>
+</h1>
 
-## Getting Started
+## 💻 Sobre o ConnectZ
 
-First, run the development server:
+O ConnectZ é um ecommerce simples e robusto focado na experiência do usuário e nas características de usabilidade e hedônicas.
+
+## 🧪 Stacks - Front-End
+
+- [ReactJS](https://reactjs.org/)
+- [NextJS](https://nextjs.org/)
+- [Styled Components](https://styled-components.com/)
+- [FramerMotion](https://www.framer.com/motion/)
+- [Material-UI](https://mui.com/pt/getting-started/usage/)
+
+## 🚀 Instruções
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clonar este repositório
+$ git clone https://github.com/marcoscelio/my-market-portal.git
+
+
+# Install dependencies
+$ npm install
+$ yarn i
+
+# Comando para rodar o app em modo desenvolvimento
+$ yarn dev
+# ou
+$ npm run dev
+
+# Comando para transpilar o projeto para javascript e construir o build do projeto que será executado por via do index.js
+$ yarn build
+#ou
+$npm run build
+
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
