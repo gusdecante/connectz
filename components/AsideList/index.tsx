@@ -83,7 +83,7 @@ export default function FolderList() {
       PRODUTOS
       </Typography>
       {products.map(({text, icon: Icon}) => (
-        <CustomListItem>
+        <CustomListItem key={text}>
           <Icon />
           <CustomListItemText 
             primary={text}
@@ -98,7 +98,7 @@ export default function FolderList() {
       CADASTRO
       </Typography>   
       {registration.map(({text, icon: Icon}) => (
-        <CustomListItem>
+        <CustomListItem key={text}>
           <Icon />
           <CustomListItemText 
             primary={text}
@@ -113,7 +113,7 @@ export default function FolderList() {
       PEDIDOS
       </Typography> 
       {purchase.map(({text, icon: Icon}) => (
-        <CustomListItem>
+        <CustomListItem key={text}>
           <Icon />
           <CustomListItemText 
             primary={text}
@@ -128,7 +128,7 @@ export default function FolderList() {
       ACESSO
       </Typography> 
       {access.map(({text, icon: Icon}) => (
-        <CustomListItem>
+        <CustomListItem key={text}>
           <Icon />
           <CustomListItemText 
             primary={text}

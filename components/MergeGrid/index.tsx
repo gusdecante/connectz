@@ -3,7 +3,7 @@ import { Grid } from '@mui/material'
 import { NavBar, AsideList, MainTable } from '../index'
 import { CustomGridContainer, CustomTypography } from './styles'
 
-export default function(){
+export default function MergeGrid(){
     return(
         <CustomGridContainer container spacing={2}>
             <Grid item xs={12}>

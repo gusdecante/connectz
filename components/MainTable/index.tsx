@@ -1,4 +1,5 @@
 import React, { useState, MouseEvent, ChangeEvent } from 'react';
+import Image from 'next/image'
 import { useTheme } from '@mui/material/styles';
 import { CustomSquareStyled, CustomTableContainer, CustomTable, CustomTableHead, CustomTableRow, CustomTableCell, CustomTableBody, CustomTableFooter, CustomTablePagination, CustomButton, ContainerButton } from './styles'
 import { IconButton } from '@mui/material';
@@ -81,7 +82,7 @@ export default function MainTable() {
   const [rowsPerPage, setRowsPerPage] = useState(5)
   const [open, setOpen] = useState(false)
 
-  const handleChangePage = (event: ChangeEvent<HTMLInputElement>, newPage: number) => {
+  const handleChangePage = (event: MouseEvent<HTMLButtonElement> | null,newPage: number) => {
     setPage(newPage);
   };
 
@@ -122,35 +123,33 @@ export default function MainTable() {
             </CustomTableRow>
           </CustomTableHead>
           <CustomTableBody>
-            {(rowsPerPage > 0 ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) : rows).map((row) => (
-              <span key={row.description}>
-                <CustomTableRow>
-                    <CustomTableCell>
-                    <IconButton
-                      aria-label="expand row"
-                      size="small"
-                      onClick={() => setOpen(!open)}
-                    >
-                      {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
-                    </IconButton>
-                  </CustomTableCell>
-                  <CustomTableCell component="th" scope="row">
-                    <div>
-                      <img src="/assets/img/product.jpg" alt="" />
-                      <span>{row.description}</span>
-                    </div>
-                  </CustomTableCell>
-                  <CustomTableCell component="th" scope="row">
-                    {row.identifier}
-                  </CustomTableCell>
-                  <CustomTableCell component="th" scope="row">
-                    {row.total}
-                  </CustomTableCell>
-                  <CustomTableCell component="th" scope="row">
-                    {row.quantity}
-                  </CustomTableCell>
-                </CustomTableRow>
-              </span>
+            {(rowsPerPage > 0 ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage) : rows).map((row, index) => (
+              <CustomTableRow key={`GTA-${row.identifier}`}>
+                  <CustomTableCell>
+                  <IconButton
+                    aria-label="expand row"
+                    size="small"
+                    onClick={() => setOpen(!open)}
+                  >
+                    {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
+                  </IconButton>
+                </CustomTableCell>
+                <CustomTableCell component="th" scope="row">
+                  <div>
+                    <Image src="/assets/img/product.jpg" alt="" />
+                    <span>{row.description}</span>
+                  </div>
+                </CustomTableCell>
+                <CustomTableCell component="th" scope="row">
+                  {row.identifier}
+                </CustomTableCell>
+                <CustomTableCell component="th" scope="row">
+                  {row.total}
+                </CustomTableCell>
+                <CustomTableCell component="th" scope="row">
+                  {row.quantity}
+                </CustomTableCell>
+              </CustomTableRow>
             ))
             
             }
