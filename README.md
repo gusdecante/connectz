@@ -11,7 +11,7 @@
 
 O ConnectZ é um ecommerce simples e robusto focado na experiência do usuário e nas características de usabilidade e hedônicas.
 
-## 🧪 Stacks - Front-End
+## 🧪 Stacks e Libs - Front-End
 
 - [ReactJS](https://reactjs.org/)
 - [NextJS](https://nextjs.org/)
