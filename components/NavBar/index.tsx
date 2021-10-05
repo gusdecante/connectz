@@ -1,18 +1,26 @@
-import React, { useState } from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
-import Avatar from '@mui/material/Avatar';
-import { SearchIconWrapper, CustomAppBar, CustomDivider, CustomTypography } from './styles'
-import { ExpandMore, ExpandLess, NotificationsOutlined, ShoppingCartOutlined } from '@mui/icons-material';
-import { Divider } from '@mui/material';
+import React, { useState } from 'react'
+import { styled, alpha } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import InputBase from '@mui/material/InputBase'
+import Badge from '@mui/material/Badge'
+import MenuIcon from '@mui/icons-material/Menu'
+import SearchIcon from '@mui/icons-material/Search'
+import Avatar from '@mui/material/Avatar'
+import {
+  SearchIconWrapper,
+  CustomAppBar,
+  CustomDivider,
+  CustomTypography,
+} from './styles'
+import {
+  ExpandMore,
+  ExpandLess,
+  NotificationsOutlined,
+  ShoppingCartOutlined,
+} from '@mui/icons-material'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -28,7 +36,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: 'auto',
   },
-}));
+}))
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
@@ -42,7 +50,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
       width: '20ch',
     },
   },
-}));
+}))
 
 export default function PrimarySearchAppBar() {
   const [open, setOpen] = useState(true)
@@ -83,7 +91,11 @@ export default function PrimarySearchAppBar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+            <IconButton
+              size="large"
+              aria-label="show 4 new mails"
+              color="inherit"
+            >
               <Badge badgeContent={4} color="secondary">
                 <ShoppingCartOutlined />
               </Badge>
@@ -97,7 +109,7 @@ export default function PrimarySearchAppBar() {
                 <NotificationsOutlined />
               </Badge>
             </IconButton>
-            <CustomDivider variant="middle"/>
+            <CustomDivider variant="middle" />
             <IconButton
               size="large"
               edge="end"
@@ -106,12 +118,14 @@ export default function PrimarySearchAppBar() {
               color="inherit"
             >
               <Avatar>G</Avatar>
-              <CustomTypography>Olá, <strong>Usuário</strong></CustomTypography>
+              <CustomTypography>
+                Olá, <strong>Usuário</strong>
+              </CustomTypography>
               {open ? <ExpandMore /> : <ExpandLess />}
             </IconButton>
           </Box>
         </Toolbar>
       </CustomAppBar>
     </Box>
-  );
+  )
 }
