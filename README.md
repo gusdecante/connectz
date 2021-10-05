@@ -16,7 +16,6 @@ O ConnectZ é um ecommerce simples e robusto focado na experiência do usuário 
 - [ReactJS](https://reactjs.org/)
 - [NextJS](https://nextjs.org/)
 - [Styled Components](https://styled-components.com/)
-- [FramerMotion](https://www.framer.com/motion/)
 - [Material-UI](https://mui.com/pt/getting-started/usage/)
 
 ## 🚀 Instruções
